@@ -12,13 +12,13 @@
   {!! Form::text('name', null,['class'=>'form-control']) !!}
 </div>
 <div class="form-group">
-{!! Form::label('email', 'Email: ')!!}
-{!! Form::email('email',null,['class'=>'form-control'])!!}
+{!! Form::label('email', 'Email: ') !!}
+{!! Form::email('email',null,['class'=>'form-control']) !!}
 </div>
 
 <div class="form-group">
-{!! Form::label('role_id', 'Role: ')!!}
-{!! Form::select('role_id',[''=>'Choose Options']+ $roles,null,['class'=>'form-control'])!!}
+{!! Form::label('role_id', 'Role: ') !!}
+{!! Form::select('role_id',[''=>'Choose Options'] + $roles,null,['class'=>'form-control']) !!}
 </div>
 
 <div class="form-group">
@@ -27,10 +27,9 @@
 </div>
 
 <div class="form-group">
-{!! Form::label('password', 'Password: ')!!}
-{!! Form::text('password',null,['class'=>'form-control'])!!}
+{!! Form::label('password', 'Password: ') !!}
+{!! Form::password('password',null,['class'=>'form-control']) !!}
 </div>
-
 <div class="form-group">
   {!! Form::submit('Create Post',['class'=>'btn btn-primary']) !!}
 </div>

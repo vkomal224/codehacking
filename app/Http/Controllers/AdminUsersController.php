@@ -30,7 +30,7 @@ class AdminUsersController extends Controller
     {
         //
 
-        $roles= Role::lists('name','id');
+        $roles= Role::lists('name','id')->all();
 
         return view('admin.users.create', compact('roles'));
     }
@@ -44,7 +44,11 @@ class AdminUsersController extends Controller
     public function store(Request $request)
     {
         //
-        return $request->all();
+
+        User::create($request->all());
+
+        return redirect('/admin/users');
+        //return $request->all();
     }
 
     /**
