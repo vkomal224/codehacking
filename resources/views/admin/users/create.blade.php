@@ -5,7 +5,7 @@
  Create Users
 </h1>
 
-{!! Form::open(['method'=>'POST','action'=>'AdminUsersController@store']) !!}
+{!! Form::open(['method'=>'POST','action'=>'AdminUsersController@store', 'files'=>true]) !!}
 
 <div class="form-group">
   {!! Form::label('title','Title: ') !!}
@@ -22,14 +22,21 @@
 </div>
 
 <div class="form-group">
+  {!! Form::label('file','File: ') !!}
+  {!! Form::file('file', null,['class'=>'form-control']) !!}
+</div>
+
+<div class="form-group">
 {!! Form::label('password', 'Password: ')!!}
-{!! Form::text('password',null,['class'=>'form-control'])!!}
+{!! Form::password('password',null,['class'=>'form-control'])!!}
 </div>
 
 <div class="form-group">
   {!! Form::submit('Create Post',['class'=>'btn btn-primary']) !!}
 </div>
 {!! Form::close() !!}
+
+@include('includes.form_error')
 
 
 

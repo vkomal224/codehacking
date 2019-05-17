@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Role;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\UsersCreateRequest;
 use App\Http\Requests;
 
 class AdminUsersController extends Controller
@@ -41,7 +41,7 @@ class AdminUsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UsersCreateRequest $request)
     {
         //
         return $request->all();
