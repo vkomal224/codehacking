@@ -8,18 +8,13 @@ class Photo extends Model
 {
     //
 
-    protected $fillable=[
-      'name', 'email', 'password', 'role_id', 'photo_id'
-    ];
+    protected $uploads='/images/';
 
-public function role()
-{
-  return $this->belongsTo('App\Role');
-}
+    protected $fillable=['file'];
 
-public function photo()
+public function getFileAttribute($photo)
 {
-  return $this->belongsTo('App\Photo');
+  return $this->uploads . $photo;
 }
 
 }
