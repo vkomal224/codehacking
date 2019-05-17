@@ -8,8 +8,8 @@
 {!! Form::open(['method'=>'POST','action'=>'AdminUsersController@store', 'files'=>true]) !!}
 
 <div class="form-group">
-  {!! Form::label('title','Title: ') !!}
-  {!! Form::text('title', null,['class'=>'form-control']) !!}
+  {!! Form::label('name','Name: ') !!}
+  {!! Form::text('name', null,['class'=>'form-control']) !!}
 </div>
 <div class="form-group">
 {!! Form::label('email', 'Email: ')!!}
@@ -22,13 +22,13 @@
 </div>
 
 <div class="form-group">
-  {!! Form::label('file','File: ') !!}
+  {!! Form::label('file','File:') !!}
   {!! Form::file('file', null,['class'=>'form-control']) !!}
 </div>
 
 <div class="form-group">
 {!! Form::label('password', 'Password: ')!!}
-{!! Form::password('password',null,['class'=>'form-control'])!!}
+{!! Form::text('password',null,['class'=>'form-control'])!!}
 </div>
 
 <div class="form-group">
