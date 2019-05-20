@@ -15,7 +15,8 @@ class AdminUsersController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     *Class 'App\Http\Controllers\Auth' not found
+
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -35,7 +36,8 @@ class AdminUsersController extends Controller
 
         $roles= Role::lists('name','id')->all();
 
-        return view('admin.users.create', compact('roles'));        unlink(public_path() . $user->photo->file);
+        return view('admin.users.create', compact('roles'));
+         unlink(public_path() . $user->photo->file);
 
     }
 
