@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+
 class User extends Authenticatable
 {
     /**
@@ -33,5 +34,31 @@ class User extends Authenticatable
     public function photo()
     {
       return $this->belongsTo('App\Photo');
+    }
+//     public function setPasswordAttribute($password)
+//     {
+//
+//       if(!empty($password))
+//       {
+//        $this->attributes['password'] = bcrypt($password);
+// }
+      // $test1=myAuthentication($check);
+      // return $test1;
+        // $this->attributes['password'] = \Hash::make($password);
+        // }
+
+// function myAuthentication($test)
+// {
+//
+//   Log::debug($test);
+// }
+
+    public function isAdmin()
+    {
+      if($this->role->name == "administrator" && $this->is_active==1)
+      {
+        return true;
+      }
+      return false;
     }
 }

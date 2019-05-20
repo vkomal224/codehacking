@@ -5,6 +5,11 @@
 <h2>Users</h2>
 
 
+@if(Session::has('duser'))
+<p class="bg-danger">{{session('duser')}}</p>
+@endif
+
+
 <table class="table">
   <thead>
     <tr>
