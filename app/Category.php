@@ -8,6 +8,6 @@ class Category extends Model
 {
     //
 
-protected $fillables = ['name'];
+protected $fillable = ['name'];
 
 }

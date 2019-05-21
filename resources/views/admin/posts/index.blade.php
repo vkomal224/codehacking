@@ -1,6 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
+@if(Session::has('duser'))
+
+ <p>{{session('duser')}}</p>
+
+@endif
 
 <h1> Posts </h1>
 
@@ -26,10 +31,10 @@
   <tr>
     <td>{{$post->id}}</td>
     <td> <img height = "50" src="{{$post->photo ? $post->photo->file : 'No photo has been placed'}}" alt=""></td>
-    <td>{{$post->user->name}}</td>
+    <td><a href="{{route('admin.posts.edit', $post->id)}}">{{$post->user->name}}</td>
     <td>{{$post->categories_id}}</td>
     <td>{{$post->title}}</td>
-    <td>{{$post->body}}</td>
+    <td>{{str_limit($post->body, 50)}}</td>
     <td>{{$post->created_at->diffForHumans()}}</td>
     <td>{{$post->updated_at->diffForHumans()}}</td>
   </tr>
