@@ -128,4 +128,12 @@ class AdminPostsController extends Controller
         return redirect ('admin\posts');
         // return "It Works";
     }
+
+    public function post($id)
+    {
+
+      $post= Post::findOrFail($id);
+      return View('post', compact('post')); 
+        // return "It Works";
+    }
 }
