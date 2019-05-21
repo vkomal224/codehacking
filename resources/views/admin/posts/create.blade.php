@@ -13,7 +13,7 @@
 </div>
 <div class="form-group">
 {!! Form::label('categories_id', 'Category: ') !!}
-{!! Form::select('categories_id',array(''=>'Choose Option',1=>'PHP', 0=>'Javascript'),null,['class'=>'form-control']) !!}
+{!! Form::select('categories_id',[''=>'Choose Option'] +$categories,null,['class'=>'form-control']) !!}
 </div>
 
 <div class="form-group">

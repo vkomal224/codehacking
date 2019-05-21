@@ -6,6 +6,7 @@ use App\Http\Requests\PostCreateRequest;
 use App\Post;
 use App\User;
 use App\Photo;
+use App\Category;
 use Illuminate\Http\Request;
 use Auth;
 class AdminPostsController extends Controller
@@ -20,7 +21,6 @@ class AdminPostsController extends Controller
       $posts = Post::all();
 
       return View('admin.posts.index', compact('posts'));
-        //ss 'App\Http\Controllers\Photo' not found
     }
 
     /**
@@ -30,9 +30,9 @@ class AdminPostsController extends Controller
      */
     public function create()
     {
-        return View('admin.posts.create');
 
-        //
+      $categories = Category::lists('name','id')->all();
+        return View('admin.posts.create', compact('categories'));
     }
 
     /**
