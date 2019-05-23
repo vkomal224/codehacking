@@ -20,7 +20,7 @@ class AdminPostsController extends Controller
     {
       $posts = Post::all();
 
-      return View('admin.posts.index', compact('posts'));
+      return view('admin.posts.index', compact('posts'));
     }
 
     /**
@@ -32,7 +32,7 @@ class AdminPostsController extends Controller
     {
 
       $categories = Category::lists('name','id')->all();
-        return View('admin.posts.create', compact('categories'));
+        return view('admin.posts.create', compact('categories'));
     }
 
     /**
@@ -84,7 +84,7 @@ class AdminPostsController extends Controller
         //
         $post= Post::findOrFail($id);
         $categories= Category::lists('name','id')->all();
-        return View('admin.posts.edit', compact('post','categories'));
+        return view('admin.posts.edit', compact('post','categories'));
 
     }
 
@@ -133,7 +133,8 @@ class AdminPostsController extends Controller
     {
 
       $post= Post::findOrFail($id);
-      return View('post', compact('post')); 
+      $comments=$post->comments()->whereIsActive(1)->get();
+      return view('post', compact('post','comments'));
         // return "It Works";
     }
 }

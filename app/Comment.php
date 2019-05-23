@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Post;
 
 class Comment extends Model
 {
@@ -15,8 +16,10 @@ class Comment extends Model
 'is_active',
     ];
 
-    public function replies()
+
+    public function post()
     {
-      return $this->hasMany('App\CommentReply');
+      return $this->belongsTo('App\Post');
     }
+
 }

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class CommentsReplyController extends Controller
+class CommentRepliesController extends Controller
 {
     /**
      * Display a listing of the resource.

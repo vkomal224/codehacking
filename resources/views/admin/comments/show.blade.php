@@ -1,22 +1,23 @@
 @extends('layouts.admin')
 
 @section('content')
+
+@if(count($comments) > 0)
 <h1> Comments</h1>
-
-
-    @if(count($comments)>0)
 
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Id</th>
-       <th scope="col">Author</th>
+       <th scope="col">Author Name</th>
       <th scope="col">Email</th>
       <th scope="col">Description</th>
     </tr>
   </thead>
 <tbody>
+
 @foreach($comments as $comment)
+
 <tr>
   <td>{{$comment->id}}</td>
   <td>{{$comment->author}}</td>
@@ -63,9 +64,9 @@
 </tr>
 
 @endforeach
-@endif
 </tbody>
 </table>
-
-
+@else
+<h1 class="text-center">No Comments</h1>
+@endif
 @stop
