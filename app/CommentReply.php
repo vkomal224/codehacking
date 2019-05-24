@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use App\Comment;
 use Illuminate\Database\Eloquent\Model;
 
 class CommentReply extends Model
@@ -9,7 +9,7 @@ class CommentReply extends Model
     //
 
     protected $fillable = [
-'post_id',
+'comment_id',
 'author',
 'email',
 'body',

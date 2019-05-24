@@ -13,6 +13,7 @@
        <th scope="col">Author</th>
       <th scope="col">Email</th>
       <th scope="col">Description</th>
+
     </tr>
   </thead>
 <tbody>
@@ -23,6 +24,8 @@
   <td>{{$comment->email}}</td>
   <td>{{$comment->body}}</td>
   <td><a href="{{route('home.post', $comment->post->id)}}">View Post</a></td>
+  <td><a href="{{route('admin.comment.replies.show', $comment->id)}}">View Replies</a></td>
+
   <td>
       @if($comment->is_active == 1)
 
